@@ -33,7 +33,6 @@ class RestaurantsFragment : BaseFragment<RestaurantsState>(R.layout.fragment_res
     }
 
     override fun render(state: RestaurantsState) {
-        super.render(state)
         easyAdapter
             .setItems(
                 ItemList
@@ -42,7 +41,7 @@ class RestaurantsFragment : BaseFragment<RestaurantsState>(R.layout.fragment_res
                         state.items,
                         itemController
                     )
-                    .addFooterIf(
+                    .addIf(
                         state.showFooterLoader,
                         state.loading,
                         footerController

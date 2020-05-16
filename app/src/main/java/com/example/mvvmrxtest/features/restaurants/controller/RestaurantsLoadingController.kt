@@ -7,13 +7,11 @@ import com.example.mvvmrxtest.core.vm.LoadingState
 import ru.surfstudio.android.easyadapter.controller.BindableItemController
 import ru.surfstudio.android.easyadapter.holder.BindableViewHolder
 
-private const val LOADER_ID = "31872373182"
-
 class RestaurantsLoadingController(
     private val onRetryAction: () -> Unit
 ) : BindableItemController<LoadingState, RestaurantsLoadingController.Holder>() {
 
-    override fun getItemId(item: LoadingState): String = LOADER_ID
+    override fun getItemId(item: LoadingState): String = item.hashCode().toString()
 
     override fun createViewHolder(parent: ViewGroup?): Holder =
         Holder(parent)

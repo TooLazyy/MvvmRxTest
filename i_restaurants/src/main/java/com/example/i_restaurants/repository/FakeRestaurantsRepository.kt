@@ -13,6 +13,7 @@ import java.util.*
 import java.util.concurrent.TimeUnit
 
 private const val MAX_PAGES = 5
+private const val FAKE_DELAY = 2000L
 
 class FakeRestaurantsRepository(
     errorMapper: ErrorMapper
@@ -25,7 +26,7 @@ class FakeRestaurantsRepository(
         request: LoadRestaurantsRequest,
         fakeError: Boolean
     ): Single<List<RestaurantInfo>> =
-        Single.timer(2000L, TimeUnit.MILLISECONDS)
+        Single.timer(FAKE_DELAY, TimeUnit.MILLISECONDS)
             .map {
                 if (fakeError) {
                     throw UnknownHostException()
