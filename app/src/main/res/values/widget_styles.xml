@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="TextInput.TextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.FilledBox.Dense">
+        <item name="errorIconDrawable">@null</item>
+        <item name="boxCornerRadiusTopStart">4dp</item>
+        <item name="boxCornerRadiusTopEnd">4dp</item>
+        <item name="boxStrokeColor">@color/input_layout_stroke</item>
+        <item name="endIconTint">@color/iron</item>
+        <item name="boxBackgroundColor">@color/athens_gray_30</item>
+        <item name="hintTextAppearance">@style/Text.Regular.12</item>
+        <item name="errorTextAppearance">@style/Text.Regular.12</item>
+        <item name="helperTextTextAppearance">@style/Text.Regular.12</item>
+    </style>
+
+    <style name="TextInput.EditText" parent="Text.Regular.18">
+        <item name="android:textColorHint">@color/gray_silver</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+</resources>

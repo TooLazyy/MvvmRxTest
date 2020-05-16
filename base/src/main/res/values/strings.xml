@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="error_no_internet">Check your internet connection!</string>
+    <string name="error_unknown">Something went wrong</string>
+
+    <string name="login_login_hint">E-mail</string>
+    <string name="login_password_hint">Password</string>
+    <string name="login_log_in">Log in</string>
+
+    <string name="restaurants_loading_retry">Retry</string>
+
+</resources>

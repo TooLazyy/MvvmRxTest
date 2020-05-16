@@ -1,0 +1,2 @@
+include ':app', ':navigation', ':base', ':i_auth', ':domain', ':i_restaurants'
+rootProject.name='MvvmRxTest'
