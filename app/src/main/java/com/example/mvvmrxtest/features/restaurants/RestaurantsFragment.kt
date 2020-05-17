@@ -2,6 +2,7 @@ package com.example.mvvmrxtest.features.restaurants
 
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.domain.RestaurantInfo
 import com.example.mvvmrxtest.R
 import com.example.mvvmrxtest.core.fragment.BaseFragment
 import com.example.mvvmrxtest.core.utils.onLoadMoreListener
@@ -21,7 +22,7 @@ class RestaurantsFragment : BaseFragment<RestaurantsState>(R.layout.fragment_res
 
     private val vm: RestaurantsVm by viewModel()
     private val easyAdapter = EasyAdapter()
-    private val itemController = RestaurantController()
+    private val itemController = RestaurantController(::onItemClicked)
     private val footerController = RestaurantsLoadingController(::onRetryLoad)
 
     override fun afterCreate(savedInstanceState: Bundle?, recreated: Boolean) {
@@ -62,5 +63,9 @@ class RestaurantsFragment : BaseFragment<RestaurantsState>(R.layout.fragment_res
 
     private fun onRetryLoad() {
         vm.retryLoad(cb_fake_error.isChecked)
+    }
+
+    private fun onItemClicked(item: RestaurantInfo) {
+        vm.onItemClicked(item)
     }
 }

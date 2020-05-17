@@ -1,5 +1,6 @@
 package com.example.mvvmrxtest.features.restaurants
 
+import com.example.domain.RestaurantInfo
 import com.example.mvvmrxtest.core.vm.BaseVm
 import com.example.mvvmrxtest.core.vm.LoadingState
 import com.example.mvvmrxtest.features.restaurants.data.RestaurantPageData
@@ -26,6 +27,12 @@ class RestaurantsVm : BaseVm<RestaurantsState>() {
 
     fun retryLoad(fakeError: Boolean) {
         pager.loadPage(fakeError)
+    }
+
+    fun onItemClicked(item: RestaurantInfo) {
+        messageController.showToast(
+            "Item: ${item.name} clicked"
+        )
     }
 
     private fun subscribeToPageState() {

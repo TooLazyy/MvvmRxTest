@@ -7,7 +7,9 @@ import kotlinx.android.synthetic.main.item_restaurant.view.*
 import ru.surfstudio.android.easyadapter.controller.BindableItemController
 import ru.surfstudio.android.easyadapter.holder.BindableViewHolder
 
-class RestaurantController : BindableItemController<RestaurantInfo, RestaurantController.Holder>() {
+class RestaurantController(
+    private val onItemClickListener: (RestaurantInfo) -> Unit
+) : BindableItemController<RestaurantInfo, RestaurantController.Holder>() {
 
     override fun getItemId(item: RestaurantInfo): String = item.id
 
@@ -21,6 +23,9 @@ class RestaurantController : BindableItemController<RestaurantInfo, RestaurantCo
                 iv_logo.setImageResource(R.mipmap.ic_launcher)
                 tv_name.text = item.name
                 tv_description.text = item.description
+                setOnClickListener {
+                    onItemClickListener(item)
+                }
             }
         }
     }
